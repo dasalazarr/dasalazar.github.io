@@ -1,28 +1,26 @@
 
-/*Selector de etiqueta*/
 .header{
     background: #0f4c75;
     color: aliceblue;
-    opacity: 0.8;
     display: flex;
     height: 70px;
     justify-content: space-between;
     align-items: center;
-     /*Fijar cabecera*/
-    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
-	left: 0; /* Posicionamos la cabecera al lado izquierdo */
-	top: 0; /* Posicionamos la cabecera pegada arriba */
-    position: fixed; /* Hacemos que la cabecera tenga una posición fija */
-    
+    flex-wrap: wrap;
+    top: 0;
+    width: 100%; 
+    left: 0; 
 }
 
 .container {
-    width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    flex: 1;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     height: inherit;
+    margin: 0 auto;
 }
 figure{
     padding: 0px;
@@ -62,7 +60,7 @@ ol, ul{
 body{
     background: white;
     font-family:  'Roboto', Arial;
-    padding-top: 70px; /* Relleno superior igual a la altura de la cabecera*/
+    /*padding-top: 70px;  Relleno superior igual a la altura de la cabecera*/
     margin: 0px 0px 0px 0px;
 }
 
@@ -70,7 +68,7 @@ h1{
     line-height: 1.5 ;
     font-size: 40px;
     letter-spacing: -.2px;
-    margin: 0px 500px 0px 0px;
+    margin: 0px 0px 0px 20px;
    
 }
 h2{
@@ -85,14 +83,17 @@ h3{
 
 .hero{
     height: 300px;
-    background-image: url('images/hyundai.png');
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: right;
     background-color: #0f4c75;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: white;
-    padding: 40px 0px 0px 30px;
-    
+    flex-wrap: wrap;
+
+}
+
+.hero-image{
+    object-fit: cover;
 }
 
 
@@ -103,12 +104,11 @@ h3{
     /* background-color: #3282b8; */
     margin: 10px 100px;
     padding: 25px;
+    flex-wrap: wrap;
     -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.5);
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
+
 }
 .exp-hyundai-title{
     font-size: 30px;
@@ -122,23 +122,16 @@ h3{
     font-size: 20px;
 }
 
-/* .exp-hyundai-title, .exp-hyundai-date, .exp-hyundai-description{
-    margin: 20px 20px;
-}
-
-.project-hult, .project-hult-date, .project-hult-description{
-    margin: 20px 20px;
-} */
-
 .project {
     display: flex;
     justify-content: space-around;
     padding: 0px 100px;
+    flex-wrap: wrap;
 }
 
 .hult-details{
-    width: 500px;
-    margin: 10px;
+    width: 48%;
+    margin: 1%;
     border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
@@ -152,6 +145,7 @@ h3{
 .project img{
     height: 305px;
     object-fit: cover; 
+    
 }
 
 .event-details{
@@ -192,6 +186,7 @@ h3{
     display: flex;
     justify-content: center;
     padding: 0px 0px 60px 0px;
+    flex-wrap: wrap;
 }
 
 .mail, .linkedin, .instagram, .twitter{
@@ -203,22 +198,118 @@ h3{
 }
 
 .linkedin {
-    background-image: url('../images/linkedin.png');
+    background-image: url('./images/linkedin.png');
 }
 
 .mail{
-    background-image: url('../images/mail.png');
+    background-image: url('./images/mail.png');
 }
 
 .instagram{
-    background-image: url('../images/instagram.png');
+    background-image: url('./images/instagram.png');
 }
 
 .twitter{
-    background-image: url('../images/twitter.png');
+    background-image: url('./images/twitter.png');
 }
 .footer p{
+    display: flex;
     font-size: medium;
     font-weight: bold;
+    flex-wrap: wrap;
 }
 
+@media screen and (max-width:320px){
+    body
+
+}
+
+@media screen and (max-width:480px){
+    body{
+        margin: 0px -10px 0px 0px;
+
+    }
+
+    .event-details{
+        font-size: 12px;
+    }
+    .event-details h3{
+        font-size: 18px;
+    }
+
+    .event-details {
+        margin: -3em 2em 1em;
+        padding: 1em;
+    }  
+
+    .hult-details img{
+        max-height: 250px;
+        object-position: 40% 25%; 
+    }
+
+    .mail, .linkedin, .instagram, .twitter{
+        margin: 0px 20px;
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+        
+    }
+
+    .footer p{
+        font-size: 1em;
+    }
+    
+
+}
+
+/* 768 resolucion iPad, entonces debo trabajar con un pixel menos */
+@media screen and (max-width:767px){
+    .header{
+        display: block;
+        height: auto;
+    }
+
+    .header .logo{
+        text-align: center;
+        display: block;
+    }
+
+    .header ol{
+        display: initial;
+    }
+
+    .header ol li{
+        height: 50px;
+    }
+
+    .header a {
+        justify-content: center;
+    }
+
+    .exp-hyundai{
+        display: block;
+    }
+
+    .logo {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .hult-details{
+        width: auto;
+        flex-shrink: initial;
+    }
+
+    .hult-details img{
+        width: 100%;
+        /* max-height: 250px;
+        object-position: 25% 25%; */
+    }
+
+    
+
+}
+
+@media screen and (max-width:1024px){
+
+}
