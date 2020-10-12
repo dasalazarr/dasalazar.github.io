@@ -1,6 +1,35 @@
-
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?tc7q2y');
+    src:  url('fonts/icomoon.eot?tc7q2y#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?tc7q2y') format('truetype'),
+      url('fonts/icomoon.woff?tc7q2y') format('woff'),
+      url('fonts/icomoon.svg?tc7q2y#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e9bd";
+  }
 .header{
-    background: #0f4c75;
+    background: #1b262c;
     color: aliceblue;
     display: flex;
     height: 70px;
@@ -83,7 +112,7 @@ h3{
 
 .hero{
     height: auto;
-    background-color: #0f4c75;
+    background-color: #1b262c;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -174,7 +203,7 @@ h3{
 }
 
 .footer{
-    background-color: #0f4c75;
+    background-color: #1b262c;
     color: white;
     display: flex;
     justify-content: center;
@@ -219,6 +248,24 @@ h3{
     font-weight: bold;
     flex-wrap: wrap;
 }
+
+.burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+    z-index: 10;
+    left: 10px;
+    top: 10px;
+    color: white;
+    font-size: 20px;
+    display: none;
+}
+
 
 @media screen and (max-width:320px){
     
@@ -269,6 +316,10 @@ h3{
 /* 768 resolucion iPad, entonces debo trabajar con un pixel menos */
 @media screen and (max-width:767px){
 
+    .burger-button{
+        display: block;
+    }
+
     .hero{
         height: auto;
         position: relative;
@@ -311,6 +362,11 @@ h3{
 
     .header a {
         justify-content: center;
+        height: 40px;
+        font-size: 1.8em;
+        margin-bottom: .5em;
+        border: 2px solid white;
+
     }
 
     .exp-hyundai{
@@ -331,6 +387,25 @@ h3{
         width: 100%;
         /* max-height: 250px;
         object-position: 25% 25%; */
+    }
+
+    .menu{
+        position: fixed;
+        background: #0f4c75b3;
+        z-index: 3;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left:-100%;
+        transition: .3s;
+    }
+
+    .menu.is-active{
+        left: 0;
     }
 
     

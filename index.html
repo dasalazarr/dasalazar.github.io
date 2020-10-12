@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <i class="icon-menu burger-button" id="burger-menu"></i>
         <header class="header">
             <div class="container">
                 <figure class="logo">
@@ -28,8 +29,8 @@
                 </nav>
             </div>   
         </header>
-            <div class="container">
-                <section class="hero">
+            <section class="hero">
+                <div class="container">
                     <h1>
                         Hola!, Soy Diego Andrés Salazar <br> 
                         Ingeniero Industrial & Procesos. <br>
@@ -38,8 +39,9 @@
                  
                     </h1>
                     <img class="hero-image" src="images/hyundai.png" alt="Hero" width="500" height="300">
-                </section> 
-            </div>             
+                </div> 
+            </section> 
+                        
             <div class="container">
                 <section id="exp" class="exp">
                     <h2>Experiencia</h2>
@@ -103,6 +105,14 @@
                         <p>#NeverGrowUp👽</p>
                     </div>
                 </footer> 
-         
+         <script>
+             const menu = document.querySelector('.menu');
+             const burgerButton = document.querySelector('#burger-menu');
+             burgerButton.addEventListener('click', hideShow)
+
+             function hideShow(){
+                menu.classList.toggle('is-active');
+             }
+         </script>
     </body>
 </html>
